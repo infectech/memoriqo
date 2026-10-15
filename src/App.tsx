@@ -12,6 +12,7 @@ import { EmotionalProof } from "./sections/EmotionalProof"
 import { FAQ } from "./sections/FAQ"
 import { Inquiry } from "./sections/Inquiry"
 import { FinalCTA } from "./sections/FinalCTA"
+import { Legal } from "./sections/Legal"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <FAQ />
         <Inquiry />
         <FinalCTA />
+        <Legal />
       </main>
       <Footer />
     </>

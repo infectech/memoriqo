@@ -35,7 +35,7 @@ export function Experiences() {
           {experiences.map((exp, i) => (
             <a
               key={exp.id}
-              href={`#${exp.id}`}
+              href={exp.id === "our-story" ? "#our-story" : `?occasion=${exp.id}#inquire`}
               data-reveal
               style={{ animationDelay: `${i * 90}ms` }}
               className={`reveal group relative flex flex-col justify-end overflow-hidden rounded-[1.5rem] border border-ink/10 p-7 transition-transform duration-500 hover:-translate-y-1 ${sizeClasses[exp.size]}`}

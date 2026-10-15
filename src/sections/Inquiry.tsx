@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react"
+import { useEffect, useState, type FormEvent } from "react"
 
 const occasions = [
   "Birthday Surprise",
@@ -10,8 +10,23 @@ const occasions = [
   "Something else",
 ]
 
+const occasionByParam: Record<string, string> = {
+  birthday: "Birthday Surprise",
+  anniversaries: "Love & Anniversary",
+  "our-story": "Our Story",
+  friendship: "Friendship & Memories",
+  milestones: "Milestone & Achievement",
+  wedding: "Wedding & Invitation",
+}
+
 export function Inquiry() {
   const [status, setStatus] = useState<"idle" | "sent">("idle")
+  const [occasion, setOccasion] = useState("")
+
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search).get("occasion")
+    if (param && occasionByParam[param]) setOccasion(occasionByParam[param])
+  }, [])
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -75,7 +90,8 @@ export function Inquiry() {
               id="occasion"
               name="occasion"
               required
-              defaultValue=""
+              value={occasion}
+              onChange={(e) => setOccasion(e.target.value)}
               className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-ink outline-none focus:border-ink/40"
             >
               <option value="" disabled>

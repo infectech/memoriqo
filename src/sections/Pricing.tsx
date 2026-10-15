@@ -6,7 +6,7 @@ export function Pricing() {
 
   return (
     <section className="bg-paper px-6 py-24 sm:px-8 sm:py-32 lg:px-12">
-      <div className="mx-auto max-w-6xl">
+      <div ref={ref} data-reveal-group className="mx-auto max-w-6xl">
         <div className="max-w-2xl reveal" data-reveal>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-rose-deep">Personalization</p>
           <h2 className="font-display text-balance text-4xl italic text-ink sm:text-5xl">
@@ -14,7 +14,7 @@ export function Pricing() {
           </h2>
         </div>
 
-        <div ref={ref} data-reveal-group className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div
             data-reveal
             className="reveal flex flex-col rounded-[1.75rem] border border-ink/10 bg-ivory p-9"

@@ -6,7 +6,7 @@ export function HowItWorks() {
 
   return (
     <section id="how-it-works" className="bg-ivory px-6 py-24 sm:px-8 sm:py-32 lg:px-12">
-      <div className="mx-auto max-w-7xl">
+      <div ref={ref} data-reveal-group className="mx-auto max-w-7xl">
         <div className="max-w-2xl reveal" data-reveal>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-rose-deep">How it works</p>
           <h2 className="font-display text-balance text-4xl italic text-ink sm:text-5xl">
@@ -14,7 +14,7 @@ export function HowItWorks() {
           </h2>
         </div>
 
-        <div ref={ref} data-reveal-group className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
+        <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
           {steps.map((step, i) => (
             <div
               key={step.number}

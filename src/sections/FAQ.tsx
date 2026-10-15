@@ -8,7 +8,7 @@ export function FAQ() {
 
   return (
     <section id="faq" className="bg-paper px-6 py-24 sm:px-8 sm:py-32 lg:px-12">
-      <div className="mx-auto max-w-3xl">
+      <div ref={ref} data-reveal-group className="mx-auto max-w-3xl">
         <div className="reveal" data-reveal>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-rose-deep">FAQ</p>
           <h2 className="font-display text-balance text-4xl italic text-ink sm:text-5xl">
@@ -16,7 +16,7 @@ export function FAQ() {
           </h2>
         </div>
 
-        <div ref={ref} data-reveal-group className="mt-12 divide-y divide-ink/10 border-t border-ink/10">
+        <div className="mt-12 divide-y divide-ink/10 border-t border-ink/10">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i
             return (

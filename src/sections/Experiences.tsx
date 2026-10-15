@@ -20,7 +20,7 @@ export function Experiences() {
 
   return (
     <section id="experiences" className="bg-paper px-6 py-24 sm:px-8 sm:py-32 lg:px-12">
-      <div className="mx-auto max-w-7xl">
+      <div ref={ref} data-reveal-group className="mx-auto max-w-7xl">
         <div className="max-w-2xl reveal" data-reveal>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-rose-deep">
             Explore experiences
@@ -31,11 +31,7 @@ export function Experiences() {
           <p className="mt-5 text-lg text-ink-soft">Whatever the occasion, let's make it feel personal.</p>
         </div>
 
-        <div
-          ref={ref}
-          data-reveal-group
-          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[280px]"
-        >
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[280px]">
           {experiences.map((exp, i) => (
             <a
               key={exp.id}

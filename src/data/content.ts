@@ -81,40 +81,115 @@ export const experiences: Experience[] = [
   },
 ]
 
+export type ThemeAccent = "rose" | "sage" | "mauve" | "taupe"
+
 export type ThemeSample = {
   id: string
   title: string
+  occasion: string
   description: string
-  accent: "rose" | "sage" | "mauve"
+  accent: ThemeAccent
   mood: string
-  image: ImageKey
+  size: "wide" | "tall" | "square"
+  visual: { kind: "image"; image: ImageKey } | { kind: "gradient" }
 }
+
+const themeGradient: Record<ThemeAccent, string> = {
+  rose: "from-rose/55 via-rose/20 to-ivory",
+  mauve: "from-mauve/55 via-mauve/20 to-ivory",
+  sage: "from-sage/55 via-sage/20 to-ivory",
+  taupe: "from-taupe/60 via-taupe/20 to-ivory",
+}
+
+export const themeAccentGradient = themeGradient
 
 export const themeSamples: ThemeSample[] = [
   {
     id: "love-letter",
     title: "The Love Letter",
+    occasion: "A Romantic Theme",
     description:
       "An intimate, romantic design featuring warm tones, personal photographs, elegant typography, and a heartfelt message.",
     accent: "rose",
     mood: "Romantic & Intimate",
-    image: "themeLoveLetter",
+    size: "wide",
+    visual: { kind: "image", image: "themeLoveLetter" },
   },
   {
-    id: "birthday-surprise",
-    title: "The Birthday Surprise",
-    description: "A playful design featuring joyful colors, a celebratory opening, photographs, and a memorable reveal.",
+    id: "aurelia",
+    title: "Aurelia",
+    occasion: "Muslim Wedding Theme",
+    description:
+      "A graceful, gold-toned design for a nikah or wedding celebration — elegant typography, warm jewel tones, and space for ceremony details, photographs, and heartfelt dua.",
+    accent: "taupe",
+    mood: "Elegant & Ceremonial",
+    size: "tall",
+    visual: { kind: "gradient" },
+  },
+  {
+    id: "vowelle",
+    title: "Vowelle",
+    occasion: "Hindu Wedding Theme",
+    description:
+      "A vibrant, marigold-and-red inspired design for a Hindu wedding — rich color, ceremonial timelines, and a place for every ritual and relative's blessing.",
+    accent: "rose",
+    mood: "Vibrant & Traditional",
+    size: "square",
+    visual: { kind: "gradient" },
+  },
+  {
+    id: "bloom",
+    title: "Bloom",
+    occasion: "Birthday Theme — Girl",
+    description: "A soft, playful design featuring floral touches, joyful colors, photographs, and a sweet birthday reveal.",
     accent: "mauve",
     mood: "Playful & Joyful",
-    image: "themeBirthdaySurprise",
+    size: "square",
+    visual: { kind: "image", image: "themeBirthdaySurprise" },
   },
   {
-    id: "memory-book",
-    title: "The Memory Book",
-    description: "A nostalgic, editorial design featuring a photo timeline, meaningful dates, captions, and shared memories.",
+    id: "confetti",
+    title: "Confetti",
+    occasion: "Birthday Theme — Boy",
+    description:
+      "A bold, energetic design with bright colors, balloons, and a celebratory countdown built for a boy's big day.",
+    accent: "sage",
+    mood: "Bold & Energetic",
+    size: "tall",
+    visual: { kind: "gradient" },
+  },
+  {
+    id: "evermore",
+    title: "Evermore",
+    occasion: "Anniversary Theme",
+    description:
+      "A nostalgic, editorial design featuring a photo timeline, meaningful dates, captions, and shared memories.",
     accent: "sage",
     mood: "Nostalgic & Editorial",
-    image: "themeMemoryBook",
+    size: "wide",
+    visual: { kind: "image", image: "themeMemoryBook" },
+  },
+  {
+    id: "serendipity",
+    title: "Serendipity",
+    occasion: "Proposal Theme",
+    description:
+      "A breathless, cinematic design for the moment you ask — countdown, a love story timeline, and space for the question itself.",
+    accent: "rose",
+    mood: "Cinematic & Breathless",
+    size: "square",
+    visual: { kind: "gradient" },
+  },
+  {
+    id: "keepsake",
+    title: "Keepsake",
+    occasion: "Friendship Theme",
+    description:
+      "A warm, nostalgic design for the friendship that's lasted years — inside jokes, shared memories, and photos worth keeping.",
+    accent: "taupe",
+    mood: "Warm & Nostalgic",
+    size: "square",
+    visual: { kind: "gradient" },
   },
 ]
 
@@ -175,7 +250,7 @@ export const faqs = [
   {
     question: "What occasions can I create a website for?",
     answer:
-      "Birthdays, anniversaries, relationship stories, friendships, graduations and milestones, weddings and invitations, and other meaningful personal moments.",
+      "Birthdays, anniversaries, proposals, relationship stories, friendships, graduations and milestones, Muslim and Hindu weddings, and other meaningful personal moments.",
   },
   {
     question: "Do I need any technical skills?",

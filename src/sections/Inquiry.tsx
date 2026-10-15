@@ -19,13 +19,44 @@ const occasionByParam: Record<string, string> = {
   wedding: "Wedding & Invitation",
 }
 
+const occasionByTheme: Record<string, string> = {
+  "love-letter": "Love & Anniversary",
+  aurelia: "Wedding & Invitation",
+  vowelle: "Wedding & Invitation",
+  bloom: "Birthday Surprise",
+  confetti: "Birthday Surprise",
+  evermore: "Love & Anniversary",
+  serendipity: "Something else",
+  keepsake: "Friendship & Memories",
+}
+
+const themeNameById: Record<string, string> = {
+  "love-letter": "The Love Letter",
+  aurelia: "Aurelia",
+  vowelle: "Vowelle",
+  bloom: "Bloom",
+  confetti: "Confetti",
+  evermore: "Evermore",
+  serendipity: "Serendipity",
+  keepsake: "Keepsake",
+}
+
 export function Inquiry() {
   const [status, setStatus] = useState<"idle" | "sent">("idle")
   const [occasion, setOccasion] = useState("")
+  const [details, setDetails] = useState("")
 
   useEffect(() => {
-    const param = new URLSearchParams(window.location.search).get("occasion")
-    if (param && occasionByParam[param]) setOccasion(occasionByParam[param])
+    const params = new URLSearchParams(window.location.search)
+    const occasionParam = params.get("occasion")
+    const themeParam = params.get("theme")
+
+    if (themeParam && occasionByTheme[themeParam]) {
+      setOccasion(occasionByTheme[themeParam])
+      setDetails(`I'd love the "${themeNameById[themeParam]}" theme — `)
+    } else if (occasionParam && occasionByParam[occasionParam]) {
+      setOccasion(occasionByParam[occasionParam])
+    }
   }, [])
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -113,6 +144,8 @@ export function Inquiry() {
               id="details"
               name="details"
               rows={4}
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
               className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-ink outline-none focus:border-ink/40"
             />
           </div>

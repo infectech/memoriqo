@@ -1,3 +1,4 @@
+import { images } from "../data/images"
 import { useReveal } from "../hooks/useReveal"
 
 export function PersonalTouch() {
@@ -7,11 +8,15 @@ export function PersonalTouch() {
     <section id="our-story" className="bg-ivory px-6 py-24 sm:px-8 sm:py-32 lg:px-12">
       <div
         ref={ref}
+        data-reveal-group
         className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16"
       >
-        <div
+        <img
+          src={images.personalTouch}
+          alt="A tender, candid family moment"
           data-reveal
-          className="reveal aspect-[4/5] rounded-[1.75rem] bg-gradient-to-br from-taupe/40 via-ivory to-rose/25"
+          className="reveal aspect-[4/5] w-full rounded-[1.75rem] object-cover"
+          loading="lazy"
         />
 
         <div data-reveal style={{ animationDelay: "140ms" }} className="reveal">

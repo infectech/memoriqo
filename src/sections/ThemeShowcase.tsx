@@ -1,11 +1,6 @@
-import { themeSamples, type ThemeSample, inquiryUrl } from "../data/content"
+import { themeSamples, inquiryUrl } from "../data/content"
+import { images } from "../data/images"
 import { useReveal } from "../hooks/useReveal"
-
-const gradients: Record<ThemeSample["accent"], string> = {
-  rose: "from-rose/50 via-rose/15 to-ivory",
-  mauve: "from-mauve/50 via-mauve/15 to-ivory",
-  sage: "from-sage/50 via-sage/15 to-ivory",
-}
 
 export function ThemeShowcase() {
   const ref = useReveal<HTMLDivElement>()
@@ -28,7 +23,14 @@ export function ThemeShowcase() {
               style={{ animationDelay: `${i * 100}ms` }}
               className="reveal group flex flex-col overflow-hidden rounded-[1.5rem] border border-ink/10 bg-paper"
             >
-              <div className={`h-52 w-full bg-gradient-to-br ${gradients[theme.accent]} transition-transform duration-700 group-hover:scale-105`} />
+              <div className="h-52 w-full overflow-hidden">
+                <img
+                  src={images[theme.image]}
+                  alt={theme.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
               <div className="flex flex-1 flex-col p-7">
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft/70">{theme.mood}</span>
                 <h3 className="mt-2 font-display text-2xl italic text-ink">{theme.title}</h3>

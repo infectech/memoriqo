@@ -1,4 +1,5 @@
 import { inquiryUrl } from "../data/content"
+import { images } from "../data/images"
 
 export function Hero() {
   return (
@@ -60,7 +61,12 @@ export function Hero() {
               <span className="h-2 w-2 rounded-full bg-sage" />
             </div>
             <p className="font-display text-lg italic text-ink">Three years, today.</p>
-            <div className="mt-3 aspect-[4/3] rounded-xl bg-gradient-to-br from-rose/40 via-taupe/30 to-mauve/30" />
+            <img
+              src={images.heroSilhouette}
+              alt="A couple embracing at sunset"
+              className="mt-3 aspect-[4/3] w-full rounded-xl object-cover"
+              loading="eager"
+            />
             <p className="mt-3 text-xs leading-relaxed text-ink-soft">
               From that rainy Tuesday to every ordinary Sunday since —
             </p>
@@ -72,7 +78,12 @@ export function Hero() {
             style={{ animationDelay: "420ms" }}
           >
             <p className="font-display text-base italic text-ink">Happy birthday, Nilufar 🎉</p>
-            <div className="mt-3 aspect-square rounded-xl bg-gradient-to-br from-sage/35 via-ivory to-taupe/30" />
+            <img
+              src={images.heroBouquet}
+              alt="Celebration flowers in warm light"
+              className="mt-3 aspect-square w-full rounded-xl object-cover"
+              loading="eager"
+            />
           </div>
 
           {/* Card 3: small handwritten note, overlapping */}

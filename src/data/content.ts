@@ -1,3 +1,5 @@
+import type { ImageKey } from "./images"
+
 export const nav = [
   { label: "Explore Experiences", href: "#experiences" },
   { label: "How It Works", href: "#how-it-works" },
@@ -13,6 +15,7 @@ export type Experience = {
   cta: string
   accent: "rose" | "sage" | "mauve" | "taupe"
   size: "tall" | "wide" | "square"
+  image: ImageKey
 }
 
 export const experiences: Experience[] = [
@@ -24,6 +27,7 @@ export const experiences: Experience[] = [
     cta: "Explore Birthday Themes",
     accent: "rose",
     size: "wide",
+    image: "experienceBirthday",
   },
   {
     id: "anniversaries",
@@ -33,6 +37,7 @@ export const experiences: Experience[] = [
     cta: "Explore Anniversary Themes",
     accent: "mauve",
     size: "tall",
+    image: "experienceAnniversary",
   },
   {
     id: "our-story",
@@ -42,6 +47,7 @@ export const experiences: Experience[] = [
     cta: "Explore Our Story Themes",
     accent: "taupe",
     size: "square",
+    image: "experienceOurStory",
   },
   {
     id: "friendship",
@@ -51,6 +57,7 @@ export const experiences: Experience[] = [
     cta: "Explore Friendship Themes",
     accent: "sage",
     size: "square",
+    image: "experienceFriendship",
   },
   {
     id: "milestones",
@@ -60,6 +67,7 @@ export const experiences: Experience[] = [
     cta: "Explore Milestone Themes",
     accent: "taupe",
     size: "tall",
+    image: "experienceMilestones",
   },
   {
     id: "wedding",
@@ -69,6 +77,7 @@ export const experiences: Experience[] = [
     cta: "Explore Wedding Themes",
     accent: "rose",
     size: "wide",
+    image: "experienceWedding",
   },
 ]
 
@@ -78,6 +87,7 @@ export type ThemeSample = {
   description: string
   accent: "rose" | "sage" | "mauve"
   mood: string
+  image: ImageKey
 }
 
 export const themeSamples: ThemeSample[] = [
@@ -88,6 +98,7 @@ export const themeSamples: ThemeSample[] = [
       "An intimate, romantic design featuring warm tones, personal photographs, elegant typography, and a heartfelt message.",
     accent: "rose",
     mood: "Romantic & Intimate",
+    image: "themeLoveLetter",
   },
   {
     id: "birthday-surprise",
@@ -95,6 +106,7 @@ export const themeSamples: ThemeSample[] = [
     description: "A playful design featuring joyful colors, a celebratory opening, photographs, and a memorable reveal.",
     accent: "mauve",
     mood: "Playful & Joyful",
+    image: "themeBirthdaySurprise",
   },
   {
     id: "memory-book",
@@ -102,6 +114,7 @@ export const themeSamples: ThemeSample[] = [
     description: "A nostalgic, editorial design featuring a photo timeline, meaningful dates, captions, and shared memories.",
     accent: "sage",
     mood: "Nostalgic & Editorial",
+    image: "themeMemoryBook",
   },
 ]
 

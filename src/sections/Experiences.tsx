@@ -1,12 +1,6 @@
 import { experiences, type Experience } from "../data/content"
+import { images } from "../data/images"
 import { useReveal } from "../hooks/useReveal"
-
-const accentGradient: Record<Experience["accent"], string> = {
-  rose: "from-rose/35 via-ivory to-taupe/25",
-  sage: "from-sage/35 via-ivory to-taupe/20",
-  mauve: "from-mauve/35 via-ivory to-rose/20",
-  taupe: "from-taupe/40 via-ivory to-sage/20",
-}
 
 const accentText: Record<Experience["accent"], string> = {
   rose: "text-rose-deep",
@@ -50,8 +44,13 @@ export function Experiences() {
               style={{ animationDelay: `${i * 90}ms` }}
               className={`reveal group relative flex flex-col justify-end overflow-hidden rounded-[1.5rem] border border-ink/10 p-7 transition-transform duration-500 hover:-translate-y-1 ${sizeClasses[exp.size]}`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${accentGradient[exp.accent]} transition-transform duration-700 group-hover:scale-105`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-paper/95 via-paper/10 to-transparent" />
+              <img
+                src={images[exp.image]}
+                alt={exp.title}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/40 to-paper/5" />
 
               <div className="relative z-10">
                 <span className={`font-display text-sm italic ${accentText[exp.accent]}`}>{exp.index}</span>

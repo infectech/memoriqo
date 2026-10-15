@@ -19,8 +19,9 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
-        <a href="#top" className="font-display text-2xl tracking-wide text-ink">
-          Memoriqo
+        <a href="#top" className="flex items-center gap-2.5">
+          <img src="/logo-memoriqo.png" alt="Memoriqo" className="h-7 w-7 object-contain" />
+          <span className="font-display text-2xl tracking-wide text-ink">Memoriqo</span>
         </a>
 
         <div className="hidden items-center gap-10 lg:flex">

@@ -11,7 +11,10 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 border-t border-ink/10 pt-12 sm:flex-row sm:justify-between">
           <div className="max-w-sm">
-            <p className="font-display text-2xl tracking-wide text-ink">Memoriqo</p>
+            <div className="flex items-center gap-2.5">
+              <img src="/logo-memoriqo.png" alt="Memoriqo" className="h-6 w-6 object-contain" />
+              <p className="font-display text-2xl tracking-wide text-ink">Memoriqo</p>
+            </div>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               Personalized digital gifts and interactive occasion websites — every meaningful moment deserves a
               beautiful place to live.

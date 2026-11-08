@@ -92,6 +92,9 @@ export type ThemeSample = {
   mood: string
   size: "wide" | "tall" | "square"
   visual: { kind: "image"; image: ImageKey } | { kind: "gradient" }
+  bestFor: string
+  includes: string[]
+  tagline: string
 }
 
 const themeGradient: Record<ThemeAccent, string> = {
@@ -114,6 +117,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Romantic & Intimate",
     size: "wide",
     visual: { kind: "image", image: "themeLoveLetter" },
+    bestFor: "Anniversaries, Valentine's Day, proposals and quiet everyday love letters.",
+    includes: ["Personal photo galleries", "Heartfelt message sections", "Love-story timeline", "Music and video embeds"],
+    tagline: "A letter that lives on, opened and re-opened on the days that matter most.",
   },
   {
     id: "aurelia",
@@ -125,6 +131,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Elegant & Ceremonial",
     size: "tall",
     visual: { kind: "gradient" },
+    bestFor: "Nikah ceremonies, walima celebrations and elegant wedding invitations.",
+    includes: ["Ceremony details", "Programme timeline", "Dua and blessings for guests", "RSVP and venue information"],
+    tagline: "A graceful, gold-toned celebration piece for the most significant day.",
   },
   {
     id: "vowelle",
@@ -136,6 +145,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Vibrant & Traditional",
     size: "square",
     visual: { kind: "gradient" },
+    bestFor: "Hindu weddings, mehendi celebrations and vibrant family rituals.",
+    includes: ["Ceremonial timelines", "Ritual and blessing sections", "Family photo galleries", "Event details and RSVP"],
+    tagline: "Vibrant and traditional — every ritual and blessing in its place.",
   },
   {
     id: "bloom",
@@ -146,6 +158,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Playful & Joyful",
     size: "square",
     visual: { kind: "image", image: "themeBirthdaySurprise" },
+    bestFor: "Birthdays for girls, sweet sixteenths and joyful surprise parties.",
+    includes: ["Birthday reveal moments", "Photo galleries", "Confetti and celebration effects", "Birthday wishes section"],
+    tagline: "Soft, floral and full of sweet surprises for her special day.",
   },
   {
     id: "confetti",
@@ -157,6 +172,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Bold & Energetic",
     size: "tall",
     visual: { kind: "gradient" },
+    bestFor: "Birthdays for boys, milestone birthdays and energetic celebrations.",
+    includes: ["Celebratory countdown", "Bold photo galleries", "Party details section", "Fun interactive reveals"],
+    tagline: "Bold colours, balloons and big-day energy built for a boy's celebration.",
   },
   {
     id: "evermore",
@@ -168,6 +186,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Nostalgic & Editorial",
     size: "wide",
     visual: { kind: "image", image: "themeMemoryBook" },
+    bestFor: "Anniversaries, year-in-review gifts and nostalgic memory books.",
+    includes: ["Photo timelines", "Meaningful dates and captions", "Memory stories", "Anniversary messages"],
+    tagline: "A nostalgic editorial keepsake for the years you've shared.",
   },
   {
     id: "serendipity",
@@ -179,6 +200,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Cinematic & Breathless",
     size: "square",
     visual: { kind: "gradient" },
+    bestFor: "Proposals, engagement surprises and the big question moment.",
+    includes: ["Proposal reveal moment", "Love-story timeline", "Countdown to the day", "Space for the question itself"],
+    tagline: "Cinematic and breathless — built for the moment you ask.",
   },
   {
     id: "keepsake",
@@ -190,6 +214,9 @@ export const themeSamples: ThemeSample[] = [
     mood: "Warm & Nostalgic",
     size: "square",
     visual: { kind: "gradient" },
+    bestFor: "Friendship anniversaries, best-friend gifts and shared-memory keepsakes.",
+    includes: ["Shared photo galleries", "Inside jokes and memories", "Friendship timeline", "Personal message sections"],
+    tagline: "Warm and nostalgic — for the friendship that never needed explaining.",
   },
 ]
 

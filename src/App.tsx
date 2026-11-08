@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { Navbar } from "./components/Navbar"
 import { Footer } from "./components/Footer"
 import { Hero } from "./sections/Hero"
@@ -36,12 +37,52 @@ function HomePage() {
   )
 }
 
+export function navigate(path: string) {
+  if (path !== window.location.pathname) {
+    window.history.pushState({}, "", path)
+    window.dispatchEvent(new PopStateEvent("popstate"))
+  }
+}
+
 function App() {
-  const path = window.location.pathname
-  if (path === "/privacy") return <PrivacyPage />
-  if (path === "/terms") return <TermsPage />
-  if (path.startsWith("/themes/")) return <ThemePage themeId={path.replace("/themes/", "")} />
-  return <HomePage />
+  const [path, setPath] = useState(window.location.pathname)
+
+  useEffect(() => {
+    const onPopState = () => setPath(window.location.pathname)
+    window.addEventListener("popstate", onPopState)
+    return () => window.removeEventListener("popstate", onPopState)
+  }, [])
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+      const anchor = (e.target as HTMLElement)?.closest("a")
+      if (!anchor) return
+      const href = anchor.getAttribute("href")
+      if (!href || !href.startsWith("/") || anchor.target === "_blank") return
+      e.preventDefault()
+      navigate(href)
+    }
+    document.addEventListener("click", onClick)
+    return () => document.removeEventListener("click", onClick)
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" })
+  }, [path])
+
+  const page =
+    path === "/privacy" ? (
+      <PrivacyPage />
+    ) : path === "/terms" ? (
+      <TermsPage />
+    ) : path.startsWith("/themes/") ? (
+      <ThemePage themeId={path.replace("/themes/", "")} />
+    ) : (
+      <HomePage />
+    )
+
+  return <div key={path} className="animate-fade-in">{page}</div>
 }
 
 export default App

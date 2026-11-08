@@ -25,18 +25,18 @@ export function ThemeShowcase() {
               href={`/themes/${theme.id}`}
               data-reveal
               style={{ animationDelay: `${(i % 3) * 100}ms` }}
-              className="reveal group relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-ink/10 p-6 shadow-sm transition-all duration-400 hover:-translate-y-1.5 hover:shadow-xl sm:min-h-[420px] sm:p-7"
+              className="reveal hover-lift group relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-ink/10 p-6 shadow-sm hover:-translate-y-2 hover:shadow-2xl sm:min-h-[420px] sm:p-7"
             >
               {theme.visual.kind === "image" ? (
                 <img
                   src={images[theme.visual.image]}
                   alt={theme.title}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="hover-zoom absolute inset-0 h-full w-full object-cover group-hover:scale-110"
                   loading="lazy"
                 />
               ) : (
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${themeAccentGradient[theme.accent]} transition-transform duration-700 group-hover:scale-105`}
+                  className={`hover-zoom absolute inset-0 bg-gradient-to-br ${themeAccentGradient[theme.accent]} group-hover:scale-110`}
                 />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
@@ -49,7 +49,7 @@ export function ThemeShowcase() {
                 <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ivory/85">{theme.description}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ivory">
                   View this theme
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ivory text-ink transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ivory text-ink transition-transform duration-500 ease-out group-hover:translate-x-1.5">
                     →
                   </span>
                 </span>

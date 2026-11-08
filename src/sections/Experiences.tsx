@@ -34,12 +34,12 @@ export function Experiences() {
               href={exp.id === "our-story" ? "#our-story" : `?occasion=${exp.id}#inquire`}
               data-reveal
               style={{ animationDelay: `${(i % 3) * 100}ms` }}
-              className="reveal group relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-ink/10 shadow-sm transition-all duration-400 hover:-translate-y-1.5 hover:shadow-xl sm:min-h-[380px]"
+              className="reveal hover-lift group relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-ink/10 shadow-sm hover:-translate-y-2 hover:shadow-2xl sm:min-h-[380px]"
             >
               <img
                 src={images[exp.image]}
                 alt={exp.title}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="hover-zoom absolute inset-0 h-full w-full object-cover group-hover:scale-110"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-paper via-paper/50 to-paper/5" />
@@ -54,7 +54,7 @@ export function Experiences() {
                 <p className="mt-2 line-clamp-2 max-w-sm text-sm leading-relaxed text-ink-soft">{exp.description}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink">
                   {exp.cta}
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink text-ivory transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink text-ivory transition-transform duration-500 ease-out group-hover:translate-x-1.5">
                     →
                   </span>
                 </span>

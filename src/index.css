@@ -16,17 +16,17 @@
   --color-sage: #a9b5a0;
   --color-taupe: #c6b9a9;
 
-    --animate-fade-rise: fade-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  --animate-fade-in: fade-in 1.1s ease forwards;
+  --animate-fade-rise: fade-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-fade-in: fade-in 0.9s ease-out forwards;
 
   @keyframes fade-rise {
     from {
       opacity: 0;
-      transform: translateY(18px);
+      transform: translate3d(0, 20px, 0);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
     }
   }
   @keyframes fade-in {
@@ -48,6 +48,7 @@
     scroll-behavior: smooth;
     scroll-padding-top: 88px;
     -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -59,6 +60,7 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
+    overscroll-behavior-y: none;
   }
 
   img,
@@ -83,6 +85,9 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
@@ -102,10 +107,24 @@
 
   .reveal {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translate3d(0, 20px, 0);
+    will-change: transform, opacity;
   }
   .reveal.is-visible {
     animation: var(--animate-fade-rise);
+  }
+
+  .smooth-all,
+  a,
+  button {
+    transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-duration: 400ms;
+  }
+
+  img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -113,6 +132,11 @@
       opacity: 1;
       transform: none;
       animation: none !important;
+      will-change: auto;
+    }
+    a,
+    button {
+      transition-duration: 0.01ms !important;
     }
   }
 

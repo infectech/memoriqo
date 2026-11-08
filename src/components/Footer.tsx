@@ -36,10 +36,10 @@ export function Footer() {
         <div className="mt-10 flex flex-col gap-4 text-xs text-ink-soft/70 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Memoriqo. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#privacy" className="hover:text-ink-soft">
+            <a href="/privacy" className="hover:text-ink-soft">
               Privacy Policy
             </a>
-            <a href="#terms" className="hover:text-ink-soft">
+            <a href="/terms" className="hover:text-ink-soft">
               Terms of Service
             </a>
           </div>

@@ -3,7 +3,6 @@ import { Footer } from "./components/Footer"
 import { Hero } from "./sections/Hero"
 import { EmotionalTransition } from "./sections/EmotionalTransition"
 import { Experiences } from "./sections/Experiences"
-import { InteractiveSample } from "./sections/InteractiveSample"
 import { HowItWorks } from "./sections/HowItWorks"
 import { ThemeShowcase } from "./sections/ThemeShowcase"
 import { PersonalTouch } from "./sections/PersonalTouch"
@@ -12,9 +11,10 @@ import { EmotionalProof } from "./sections/EmotionalProof"
 import { FAQ } from "./sections/FAQ"
 import { Inquiry } from "./sections/Inquiry"
 import { FinalCTA } from "./sections/FinalCTA"
-import { Legal } from "./sections/Legal"
+import { PrivacyPage, TermsPage } from "./pages/LegalPage"
+import { ThemePage } from "./pages/ThemePage"
 
-function App() {
+function HomePage() {
   return (
     <>
       <Navbar />
@@ -22,7 +22,6 @@ function App() {
         <Hero />
         <EmotionalTransition />
         <Experiences />
-        <InteractiveSample />
         <HowItWorks />
         <ThemeShowcase />
         <PersonalTouch />
@@ -31,11 +30,18 @@ function App() {
         <FAQ />
         <Inquiry />
         <FinalCTA />
-        <Legal />
       </main>
       <Footer />
     </>
   )
+}
+
+function App() {
+  const path = window.location.pathname
+  if (path === "/privacy") return <PrivacyPage />
+  if (path === "/terms") return <TermsPage />
+  if (path.startsWith("/themes/")) return <ThemePage themeId={path.replace("/themes/", "")} />
+  return <HomePage />
 }
 
 export default App

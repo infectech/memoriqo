@@ -29,7 +29,7 @@ export function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium tracking-wide text-ink-soft transition-colors hover:text-ink"
+              className="text-sm font-medium tracking-wide text-ink-soft transition-colors duration-400 ease-out hover:text-ink"
             >
               {item.label}
             </a>
@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="hidden lg:block">
           <a
             href={inquiryUrl}
-            className="rounded-full border border-ink/80 px-6 py-2.5 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-ink hover:text-ivory"
+            className="rounded-full border border-ink/80 px-6 py-2.5 text-sm font-medium tracking-wide text-ink transition-colors duration-400 ease-out hover:bg-ink hover:text-ivory"
           >
             Create a Gift
           </a>

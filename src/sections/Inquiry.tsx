@@ -152,7 +152,7 @@ export function Inquiry() {
 
           <button
             type="submit"
-            className="w-full rounded-full bg-ink px-8 py-3.5 text-sm font-medium tracking-wide text-ivory transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
+            className="w-full rounded-full bg-ink px-8 py-3.5 text-sm font-medium tracking-wide text-ivory transition-transform duration-500 ease-out hover:-translate-y-1 sm:w-auto"
           >
             Send Inquiry
           </button>

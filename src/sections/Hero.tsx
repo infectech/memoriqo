@@ -30,7 +30,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-5">
             <a
               href={inquiryUrl}
-              className="rounded-full bg-ink px-8 py-3.5 text-sm font-medium tracking-wide text-ivory transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="rounded-full bg-ink px-8 py-3.5 text-sm font-medium tracking-wide text-ivory transition-transform duration-500 ease-out hover:-translate-y-1 hover:shadow-lg"
             >
               Create a Gift
             </a>
@@ -39,7 +39,7 @@ export function Hero() {
               className="group inline-flex items-center gap-2 text-sm font-medium tracking-wide text-ink"
             >
               Explore the Experiences
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span className="transition-transform duration-500 ease-out group-hover:translate-x-1.5">→</span>
             </a>
           </div>
 

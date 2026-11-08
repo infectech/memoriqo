@@ -26,7 +26,7 @@ export function Footer() {
 
           <div className="flex flex-wrap gap-x-10 gap-y-4 text-sm">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="text-ink-soft transition-colors hover:text-ink">
+              <a key={link.href} href={link.href} className="text-ink-soft transition-colors duration-400 ease-out hover:text-ink">
                 {link.label}
               </a>
             ))}
@@ -36,10 +36,10 @@ export function Footer() {
         <div className="mt-10 flex flex-col gap-4 text-xs text-ink-soft/70 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Memoriqo. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="/privacy" className="hover:text-ink-soft">
+            <a href="/privacy" className="transition-colors duration-400 ease-out hover:text-ink">
               Privacy Policy
             </a>
-            <a href="/terms" className="hover:text-ink-soft">
+            <a href="/terms" className="transition-colors duration-400 ease-out hover:text-ink">
               Terms of Service
             </a>
           </div>

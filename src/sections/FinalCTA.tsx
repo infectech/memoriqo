@@ -22,7 +22,7 @@ export function FinalCTA() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
           <a
             href={inquiryUrl}
-            className="rounded-full bg-ivory px-8 py-3.5 text-sm font-medium tracking-wide text-ink transition-transform duration-300 hover:-translate-y-0.5"
+            className="rounded-full bg-ivory px-8 py-3.5 text-sm font-medium tracking-wide text-ink transition-transform duration-500 ease-out hover:-translate-y-1"
           >
             Create a Gift
           </a>

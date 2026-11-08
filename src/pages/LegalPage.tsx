@@ -14,7 +14,7 @@ function LegalPage({ title, heading, paragraphs, note }: LegalPageProps) {
             <img src="/logo-memoriqo.png" alt="Memoriqo" className="h-7 w-7 object-contain" />
             <span className="font-display text-2xl tracking-wide text-ink">Memoriqo</span>
           </a>
-          <a href="/" className="text-sm font-medium tracking-wide text-ink-soft transition-colors hover:text-ink">
+          <a href="/" className="text-sm font-medium tracking-wide text-ink-soft transition-colors duration-400 ease-out hover:text-ink">
             ← Back to Home
           </a>
         </div>
@@ -37,10 +37,10 @@ function LegalPage({ title, heading, paragraphs, note }: LegalPageProps) {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-xs text-ink-soft/70 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Memoriqo. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="/privacy" className="hover:text-ink-soft">
+            <a href="/privacy" className="transition-colors duration-400 ease-out hover:text-ink">
               Privacy Policy
             </a>
-            <a href="/terms" className="hover:text-ink-soft">
+            <a href="/terms" className="transition-colors duration-400 ease-out hover:text-ink">
               Terms of Service
             </a>
           </div>

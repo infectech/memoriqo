@@ -27,7 +27,7 @@ export function Pricing() {
             </div>
             <a
               href={inquiryUrl}
-              className="mt-7 inline-block rounded-full bg-ink px-7 py-3 text-center text-sm font-medium tracking-wide text-ivory transition-transform duration-300 hover:-translate-y-0.5"
+              className="mt-7 inline-block rounded-full bg-ink px-7 py-3 text-center text-sm font-medium tracking-wide text-ivory transition-transform duration-500 ease-out hover:-translate-y-1"
             >
               {pricing.signature.cta}
             </a>
@@ -46,7 +46,7 @@ export function Pricing() {
             </div>
             <a
               href={inquiryUrl}
-              className="mt-7 inline-block rounded-full border border-ivory/60 px-7 py-3 text-center text-sm font-medium tracking-wide text-ivory transition-transform duration-300 hover:-translate-y-0.5 hover:bg-ivory hover:text-ink"
+              className="mt-7 inline-block rounded-full border border-ivory/60 px-7 py-3 text-center text-sm font-medium tracking-wide text-ivory transition-transform duration-500 ease-out hover:-translate-y-1 hover:bg-ivory hover:text-ink"
             >
               {pricing.custom.cta}
             </a>
